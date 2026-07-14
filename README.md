@@ -161,6 +161,10 @@ Key test cases (all passed):
 - Git LFS was not used for large modeling assets
 - Git was adopted mid-project, so some work happened by overwriting the Git folder rather than through it, diluting the benefits of synchronization
 
+## testing video link
+https://www.youtube.com/watch?v=TpHQC-PzqVg
+
+
 ## 10. How to Run
 
 ```bash
