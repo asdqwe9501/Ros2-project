@@ -1,5 +1,5 @@
 # ROS2 Autonomous Driving Simulation
-
+<img width="874" height="453" alt="Image" src="https://github.com/user-attachments/assets/22e4c28c-390d-4b6e-b075-314991dfd481" />
 > Robot Software course project, Dept. of Computer Software Engineering, Dong-eui University (Section 2, Team 5)
 > A ROS 2 based autonomous driving system running in Gazebo: lane following, stop/end line recognition, dynamic obstacle & pedestrian avoidance, and hill driving.
 
