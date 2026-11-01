@@ -9,12 +9,13 @@
 
 ## My contribution (Dong Hyeon Kwak)
 
-This was a five-person team project. My part:
+This was a five-person team project. I worked on all of the code except the PID lane-keeping control:
 
-- **Camera-based obstacle detection** — [`detect_obstacle()` in `line_detector.py`](./ros2_term_project/ros2_term_project/line_detector.py): HSV conversion, two red hue bands (0–10 and 170–180) combined with `bitwise_or`, and an obstacle reported when more than 5,000 pixels are red. The result is published on the `obstacle_issue` topic every camera frame.
+- **Node implementation across the system** — vehicle start (`starter.py`), lane tracking and following, stop/end line detection, integrated control (`controller.py`), state monitoring and the cube obstacle.
+- **Camera-based obstacle detection (lead)** — [`detect_obstacle()` in `line_detector.py`](./ros2_term_project/ros2_term_project/line_detector.py): HSV conversion, two red hue bands (0–10 and 170–180) combined with `bitwise_or`, and an obstacle reported when more than 5,000 pixels are red. The result is published on the `obstacle_issue` topic every camera frame.
 - **Final report** (co-author).
 
-The other modules are listed with their owners in [Team & Roles](#8-team--roles).
+Per-module owners are listed in [Team & Roles](#8-team--roles).
 
 > **Repository contents:** two ROS 2 packages, ready to place in a colcon workspace's `src/`:
 > - `ros2_term_project/` — the driving nodes (`ros2_term_project/ros2_term_project/*.py`), `package.xml`/`setup.py`, the launch file (`launch/car_sim.launch.py`), the Gazebo track (`worlds/`) and the Blender hill model (`models/pavement_hill`)
@@ -162,7 +163,7 @@ Key test cases (all passed):
 | Name | Responsibilities |
 |---|---|
 | Taeyoung Nam | System environment, lane detection, stop-section implementation / requirements management, meeting minutes, final report, driving video |
-| **Dong Hyeon Kwak** | Obstacle detection implementation / final report |
+| **Dong Hyeon Kwak** | Obstacle detection implementation; contributed to all other code except PID control / final report |
 | Juri Seok | Cube obstacle implementation / meeting minutes, project plan, driving video |
 | Chaeyeon Won | Hill implementation (Blender 3D modeling) / report, slides, presentation video |
 | Jinhyuk Cho | Pedestrian implementation / report |
