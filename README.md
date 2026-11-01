@@ -9,9 +9,9 @@
 
 ## My contribution (Dong Hyeon Kwak)
 
-This was a five-person team project. I worked on all of the code except the PID lane-keeping control:
+This was a five-person team project. My part:
 
-- **Node implementation across the system** — vehicle start (`starter.py`), lane tracking and following, stop/end line detection, integrated control (`controller.py`), state monitoring and the cube obstacle.
+- **Contributed to driving, stop/end line detection and integrated control** — lane following (`line_follower.py`), stop/end line detection (`stop_line_tracker.py`, `end_line_tracker.py`) and the integrated controller (`controller.py`).
 - **Camera-based obstacle detection (lead)** — [`detect_obstacle()` in `line_detector.py`](./ros2_term_project/ros2_term_project/line_detector.py): HSV conversion, two red hue bands (0–10 and 170–180) combined with `bitwise_or`, and an obstacle reported when more than 5,000 pixels are red. The result is published on the `obstacle_issue` topic every camera frame.
 - **Final report** (co-author).
 
@@ -163,7 +163,7 @@ Key test cases (all passed):
 | Name | Responsibilities |
 |---|---|
 | Taeyoung Nam | System environment, lane detection, stop-section implementation / requirements management, meeting minutes, final report, driving video |
-| **Dong Hyeon Kwak** | Obstacle detection implementation; contributed to all other code except PID control / final report |
+| **Dong Hyeon Kwak** | Obstacle detection implementation; contributed to driving, stop/end line detection and integrated control / final report |
 | Juri Seok | Cube obstacle implementation / meeting minutes, project plan, driving video |
 | Chaeyeon Won | Hill implementation (Blender 3D modeling) / report, slides, presentation video |
 | Jinhyuk Cho | Pedestrian implementation / report |
