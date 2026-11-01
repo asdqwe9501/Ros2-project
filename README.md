@@ -5,6 +5,21 @@
 > Robot Software course project, Dept. of Computer Software Engineering, Dong-eui University (Section 2, Team 5)
 > A ROS 2 based autonomous driving system running in Gazebo: lane following, stop/end line recognition, dynamic obstacle & pedestrian avoidance, and hill driving.
 
+**Demo video:** [youtube.com/watch?v=TpHQC-PzqVg](https://www.youtube.com/watch?v=TpHQC-PzqVg)
+
+## My contribution (Dong Hyeon Kwak)
+
+This was a five-person team project. My part:
+
+- **Camera-based obstacle detection** — [`detect_obstacle()` in `line_detector.py`](./ros2_term_project/ros2_term_project/line_detector.py): HSV conversion, two red hue bands (0–10 and 170–180) combined with `bitwise_or`, and an obstacle reported when more than 5,000 pixels are red. The result is published on the `obstacle_issue` topic every camera frame.
+- **Final report** (co-author).
+
+The other modules are listed with their owners in [Team & Roles](#8-team--roles).
+
+> **Repository contents:** two ROS 2 packages, ready to place in a colcon workspace's `src/`:
+> - `ros2_term_project/` — the driving nodes (`ros2_term_project/ros2_term_project/*.py`), `package.xml`/`setup.py`, the launch file (`launch/car_sim.launch.py`), the Gazebo track (`worlds/`) and the Blender hill model (`models/pavement_hill`)
+> - `custom_interface/` — the `Target.msg` message package used by the nodes
+
 ---
 
 ## 1. Overview
@@ -147,7 +162,7 @@ Key test cases (all passed):
 | Name | Responsibilities |
 |---|---|
 | Taeyoung Nam | System environment, lane detection, stop-section implementation / requirements management, meeting minutes, final report, driving video |
-| Donghyun Kwak | Obstacle detection implementation / final report |
+| **Dong Hyeon Kwak** | Obstacle detection implementation / final report |
 | Juri Seok | Cube obstacle implementation / meeting minutes, project plan, driving video |
 | Chaeyeon Won | Hill implementation (Blender 3D modeling) / report, slides, presentation video |
 | Jinhyuk Cho | Pedestrian implementation / report |
@@ -163,15 +178,19 @@ Key test cases (all passed):
 - Git LFS was not used for large modeling assets
 - Git was adopted mid-project, so some work happened by overwriting the Git folder rather than through it, diluting the benefits of synchronization
 
-## testing video link
-https://www.youtube.com/watch?v=TpHQC-PzqVg
-
-
 ## 10. How to Run
 
 ```bash
-cd ~/Ros2Projects/oom_ws
+mkdir -p ~/oom_ws/src && cd ~/oom_ws/src
+git clone https://github.com/asdqwe9501/Ros2-project.git
+cd ~/oom_ws
+colcon build
 source install/setup.bash
+
+# Terminal 1 — Gazebo world and nodes
+ros2 launch ros2_term_project car_sim.launch.py
+
+# Terminal 2 — start a vehicle
 ros2 run ros2_term_project starter PR001   # or PR002
 ```
 

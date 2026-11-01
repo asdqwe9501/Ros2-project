@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="pavement_hill">
+    <static>true</static>
+    <link name="hill_link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pavement_hill/meshes/pavement_hill.dae</uri>
+            <scale>1 1.05 1</scale>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://pavement_hill/meshes/pavement_hill.dae</uri>
+            <scale>1 1.05 1</scale>
+          </mesh>
+        </geometry>
+          <cast_shadows>false</cast_shadows>
+      </collision>
+    </link>
+  </model>
+</sdf>
+
